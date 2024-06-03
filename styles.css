@@ -1,0 +1,86 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient nền */
+    margin: 0;
+}
+
+#countdown {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* Nền trắng mờ */
+    padding: 20px;
+    border-radius: 15px; /* Bo góc tròn */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Bóng đổ */
+    backdrop-filter: blur(10px); /* Hiệu ứng làm mờ nền phía sau */
+    animation: fadeIn 2s ease-in; /* Hiệu ứng fade-in */
+    width: 90%;
+    max-width: 500px; /* Giới hạn chiều rộng tối đa */
+    box-sizing: border-box;
+}
+
+#timer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Cho phép các ô xuống dòng */
+}
+
+.time-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    margin: 10px; /* Khoảng cách giữa các ô */
+    transition: transform 0.2s; /* Hiệu ứng chuyển động */
+}
+
+.time-box:hover {
+    transform: scale(1.1); /* Phóng to khi hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
+}
+
+.number {
+    font-size: 3em;
+    font-weight: bold;
+    color: #333;
+    animation: colorChange 3s infinite; /* Hiệu ứng đổi màu */
+}
+
+.label {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #777;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes colorChange {
+    0%, 100% { color: #333; }
+    50% { color: #ff7e5f; }
+}
+
+/* Media Queries cho các thiết bị nhỏ hơn */
+@media (max-width: 600px) {
+    .time-box {
+        width: 80px; /* Giảm chiều rộng các ô */
+        padding: 15px; /* Giảm padding */
+    }
+
+    .number {
+        font-size: 2em; /* Giảm kích thước font */
+    }
+
+    .label {
+        font-size: 1em; /* Giảm kích thước font */
+    }
+}
